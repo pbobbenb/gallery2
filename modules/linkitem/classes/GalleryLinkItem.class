@@ -74,7 +74,7 @@ class GalleryLinkItem extends GalleryItem {
 	    }
 	}
 
-	$ret = parent::create($parentId, 'linkitem' . rand(1000, 9999));
+	$ret = parent::create_gi($parentId, 'linkitem' . rand(1000, 9999));
 	if ($ret) {
 	    return $ret;
 	}

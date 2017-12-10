@@ -70,7 +70,7 @@ class GalleryFileSystemEntity extends GalleryChildEntity {
      *        Defaults to false.
      * @return GalleryStatus a status code
      */
-    function create($parentId, $pathComponent, $isDirectory=false) {
+    function create_fs($parentId, $pathComponent, $isDirectory=false) {
 	if (empty($pathComponent)) {
 	    return GalleryCoreApi::error(ERROR_BAD_PARAMETER);
 	}
@@ -90,7 +90,7 @@ class GalleryFileSystemEntity extends GalleryChildEntity {
 	    return $ret;
 	}
 
-	$ret = parent::create($parentId);
+	$ret = parent::create_che($parentId, $pathComponent);
 	if ($ret) {
 	    return $ret;
 	}

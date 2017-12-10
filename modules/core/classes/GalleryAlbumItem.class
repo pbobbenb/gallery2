@@ -92,7 +92,7 @@ class GalleryAlbumItem extends GalleryItem {
 	}
 
 	/* Let our superclass take care of creation in the persistent store */
-	$ret = parent::create($parentId, $albumName, true);
+	$ret = parent::create_gi($parentId, $albumName, true);
 	if ($ret) {
 	    return $ret;
 	}
@@ -247,7 +247,7 @@ class GalleryAlbumItem extends GalleryItem {
     /**
      * @see GalleryItem::save()
      */
-    function save($postEvent=true) {
+    function save($postEvent=true, $setAclId=null) {
 	global $gallery;
 	$session =& $gallery->getSession();
 

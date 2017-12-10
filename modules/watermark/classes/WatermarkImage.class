@@ -224,7 +224,7 @@ class WatermarkImage extends GalleryEntity {
      * @param string $targetName the desired name of the new item
      * @return GalleryStatus a status code
      */
-    function create($inputFileName, $mimeType, $targetName=null) {
+    function create_wmi($inputFileName, $mimeType, $targetName=null) {
 	GalleryCoreApi::requireOnce('modules/watermark/classes/WatermarkHelper.class');
 	global $gallery;
 	$platform =& $gallery->getPlatform();
@@ -266,7 +266,7 @@ class WatermarkImage extends GalleryEntity {
 	    $targetName = '_' . $targetName;
 	}
 
-	$ret = parent::create();
+	$ret = parent::create_ent();
 	if ($ret) {
 	    return $ret;
 	}

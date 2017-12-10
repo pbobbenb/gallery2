@@ -68,7 +68,7 @@ class MimeModule extends GalleryModule {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	list ($ret, $params) = GalleryCoreApi::fetchAllPluginParameters('module', 'mime');
 	if ($ret) {
 	    return $ret;

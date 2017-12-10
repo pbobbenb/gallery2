@@ -41,7 +41,7 @@ class UploadAppletModule extends GalleryModule {
     /**
      * @see GalleryPlugin::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	global $gallery;
 
 	list ($ret, $params) =

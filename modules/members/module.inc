@@ -43,7 +43,7 @@ class MembersModule extends GalleryModule {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	if (!isset($currentVersion)) {
 	    list ($ret, $viewSelectedGroupId) =
 		GalleryCoreApi::getPluginParameter('module', 'core', 'id.everybodyGroup');

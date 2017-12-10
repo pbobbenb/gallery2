@@ -729,7 +729,7 @@ global $ADODB_DATETIME_CLASS;
 	} else {
 		if (isset($TZ)) return $TZ;
 		$y = date('Y');
-		$TZ = mktime(0,0,0,12,2,$y,0) - gmmktime(0,0,0,12,2,$y,0);
+		$TZ = mktime(0,0,0,12,2,$y) - gmmktime(0,0,0,12,2,$y);
 	}
 	
 	return $TZ;
@@ -1005,8 +1005,7 @@ function adodb_tz_offset($gmt,$isphp5)
 	if ($isphp5) 
 		return sprintf('%s%02d%02d',($gmt<=0)?'+':'-',floor($zhrs),($zhrs-$hrs)*60); 
 	else
-		return sprintf('%s%02d%02d',($gmt<0)?'+':'-',floor($zhrs),($zhrs-$hrs)*60); 
-	break;
+		return sprintf('%s%02d%02d',($gmt<0)?'+':'-',floor($zhrs),($zhrs-$hrs)*60);
 }
 
 

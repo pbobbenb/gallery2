@@ -41,7 +41,7 @@ class WebCamModule extends GalleryModule {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	global $gallery;
 
 	list ($ret, $params) = GalleryCoreApi::fetchAllPluginParameters('module', 'webcam');

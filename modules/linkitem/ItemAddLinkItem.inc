@@ -30,7 +30,7 @@ class ItemAddLinkItem extends ItemAddPlugin {
     /**
      * @see ItemAddPlugin::handleRequest
      */
-    function handleRequest($form, &$item) {
+    function handleRequest($form, &$item, &$addController) {
 	global $gallery;
 
 	$status = $error = array();

@@ -47,7 +47,7 @@ class FotokastenModule extends GalleryModule {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	global $gallery;
 
 	list ($ret, $params) =
@@ -119,7 +119,7 @@ class FotokastenModule extends GalleryModule {
     /**
      * @see GalleryModule::getItemLinks
      */
-    function getItemLinks($items, $wantsDetailedLinks, $permissions) {
+    function getItemLinks($items, $wantsDetailedLinks, $permissions, $userId) {
 	global $gallery;
 	$session =& $gallery->getSession();
 

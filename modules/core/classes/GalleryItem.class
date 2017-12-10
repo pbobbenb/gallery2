@@ -173,7 +173,7 @@ class GalleryItem extends GalleryFileSystemEntity {
      *        Defaults to false.
      * @return GalleryStatus a status code
      */
-    function create($parentId, $path, $canContainChildren=false) {
+    function create_gi($parentId, $path, $canContainChildren=false) {
 	global $gallery;
 
 	if (!isset($path) || !isset($parentId)) {
@@ -189,7 +189,7 @@ class GalleryItem extends GalleryFileSystemEntity {
 	    return GalleryCoreApi::error(ERROR_ILLEGAL_CHILD);
 	}
 
-	$ret = parent::create($parentId, $path, $canContainChildren);
+	$ret = parent::create_fs($parentId, $path);
 	if ($ret) {
 	    return $ret;
 	}
@@ -393,7 +393,7 @@ class GalleryItem extends GalleryFileSystemEntity {
      *
      * @return GalleryStatus a status code
      */
-    function save($postEvent=true) {
+    function save($postEvent=true, $setAclId=null) {
 	global $gallery;
 	$isNew = $this->testPersistentFlag(STORAGE_FLAG_NEWLY_CREATED);
 

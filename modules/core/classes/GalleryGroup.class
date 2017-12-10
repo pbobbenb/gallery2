@@ -75,7 +75,7 @@ class GalleryGroup extends GalleryEntity {
      * @param int $groupType the type of group
      * @return GalleryStatus a status code
      */
-    function create($groupName, $groupType=GROUP_NORMAL) {
+    function create_group($groupName, $groupType=GROUP_NORMAL) {
 	global $gallery;
 
 	/* Check to see if we have a collision */
@@ -99,7 +99,7 @@ class GalleryGroup extends GalleryEntity {
 	    return GalleryCoreApi::error(ERROR_COLLISION);
 	}
 
-	$ret = parent::create();
+	$ret = parent::create_ent();
 	if ($ret) {
 	    return $ret;
 	}

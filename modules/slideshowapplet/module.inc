@@ -41,7 +41,7 @@ class SlideshowAppletModule extends GalleryModule {
     /**
      * @see GalleryPlugin::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	global $gallery;
 
 	list ($ret, $params) =
@@ -90,7 +90,7 @@ class SlideshowAppletModule extends GalleryModule {
     /**
      * @see GalleryModule::getItemLinks
      */
-    function getItemLinks($items, $wantsDetailedLinks, $permissions) {
+    function getItemLinks($items, $wantsDetailedLinks, $permissions, $userId) {
 	global $gallery;
 
 	$links = array();

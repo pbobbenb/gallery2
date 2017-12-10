@@ -52,7 +52,7 @@ class CommentModule extends GalleryModule {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	global $gallery;
 	$storage =& $gallery->getStorage();
 
@@ -251,7 +251,7 @@ class CommentModule extends GalleryModule {
     /**
      * @see GalleryModule::getItemLinks
      */
-    function getItemLinks($items, $wantsDetailedLinks, $permissions) {
+    function getItemLinks($items, $wantsDetailedLinks, $permissions, $userId) {
 	list ($ret, $showAll) = $this->getParameter('comments.latest');
 	if ($ret) {
 	    return array($ret, null);

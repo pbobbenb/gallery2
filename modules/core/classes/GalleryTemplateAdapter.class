@@ -518,11 +518,11 @@ class GalleryTemplateAdapter {
 		      'id' => '_all'),
 		$contents);
 	    if ($phpVm->function_exists('gzencode')) {
+	    $zipdata=$phpVm->gzencode($contents, 9, FORCE_GZIP);
 		GalleryDataCache::putToDisk(
 		    array('type' => 'module',
 			  'itemId' => 'CombinedJavascript_gzip_' . $key,
-			  'id' => '_all'),
-		    $phpVm->gzencode($contents, 9, FORCE_GZIP));
+			  'id' => '_all'),$zipdata);
 	    }
 	}
 	return $urlGenerator->generateUrl(

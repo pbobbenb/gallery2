@@ -116,7 +116,7 @@ class HttpAuthModule extends GalleryModule /* and GalleryEventListener */ {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	switch ($currentVersion) {
 	case null:
 	    /* Initial install */

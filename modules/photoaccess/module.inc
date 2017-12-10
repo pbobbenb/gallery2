@@ -44,7 +44,7 @@ class PhotoAccessModule extends GalleryModule {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	global $gallery;
 	if (!isset($currentVersion)) {
 	    $currentVersion = '0';
@@ -135,7 +135,7 @@ class PhotoAccessModule extends GalleryModule {
     /**
      * @see GalleryModule::getItemLinks
      */
-    function getItemLinks($items, $wantsDetailedLinks, $permissions) {
+    function getItemLinks($items, $wantsDetailedLinks, $permissions, $userId) {
 	$links = array();
 
 	foreach ($items as $item) {

@@ -211,8 +211,8 @@ class GalleryDerivative extends GalleryChildEntity {
      * @param int $parentId the id of the parent GalleryItem
      * @return GalleryStatus a status code
      */
-    function create($parentId) {
-	$ret = parent::create($parentId);
+    function create_der($parentId, $pathComponent, $isDirectory=false) {
+	$ret = parent::create_che($parentId, $pathComponent);
 	if ($ret) {
 	    return $ret;
 	}

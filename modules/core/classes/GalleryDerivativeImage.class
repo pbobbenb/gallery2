@@ -78,7 +78,7 @@ class GalleryDerivativeImage extends GalleryDerivative {
      * @param int $derivativeType the type of derivative image
      * @return GalleryStatus a status code
      */
-    function create($parentId, $derivativeType) {
+    function create($parentId, $derivativeType, $isDirectory=false) {
 	global $gallery;
 	$parentId = (int)$parentId;
 
@@ -121,7 +121,7 @@ class GalleryDerivativeImage extends GalleryDerivative {
 	    }
 	}
 
-	$ret = parent::create($parentId);
+	$ret = parent::create_der($parentId,"");
 	if ($ret) {
 	    return $ret;
 	}

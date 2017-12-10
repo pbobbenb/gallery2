@@ -58,7 +58,7 @@ class ADODB_db2 extends ADOConnection {
         return ADOConnection::GetOne('VALUES IDENTITY_VAL_LOCAL()');
     }
 	
-	function ADODB_db2() 
+	function __construct() 
 	{ 	
 		$this->_haserrorfunctions = ADODB_PHPVER >= 0x4050;
 	}
@@ -482,7 +482,7 @@ See http://msdn.microsoft.com/library/default.asp?url=/library/en-us/db2/htm/db2
 	        $qid = db2_columns($this->_connectionID, "", $schema, $table, $colname);
 		if (empty($qid)) return $false;
 		
-		$rs =& new ADORecordSet_db2($qid);
+		$rs = new ADORecordSet_db2($qid);
 		$ADODB_FETCH_MODE = $savem;
 		
 		if (!$rs) return $false;
@@ -534,7 +534,7 @@ See http://msdn.microsoft.com/library/default.asp?url=/library/en-us/db2/htm/db2
 	      $qid = db2_primary_keys($this->_connectionID, "", $schema, $table);
 		if (empty($qid)) return $false;
 		
-		$rs =& new ADORecordSet_db2($qid);
+		$rs = new ADORecordSet_db2($qid);
 		$ADODB_FETCH_MODE = $savem;
 		
 		if (!$rs) return $retarr;
@@ -677,7 +677,7 @@ class ADORecordSet_db2 extends ADORecordSet {
 	var $dataProvider = "db2";
 	var $useFetchArray;
 	
-	function ADORecordSet_db2($id,$mode=false)
+	function __construct($id,$mode=false)
 	{
 		if ($mode === false) {  
 			global $ADODB_FETCH_MODE;

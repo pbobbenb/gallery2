@@ -46,7 +46,7 @@ class Getid3Module extends GalleryModule {
     /**
      * @see GalleryModule::upgrade
      */
-    function upgrade($currentVersion) {
+    function upgrade($currentVersion, $statusMonitor) {
 	global $gallery;
 
 	if (!isset($currentVersion)) {

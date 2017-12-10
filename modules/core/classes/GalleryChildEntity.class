@@ -59,14 +59,14 @@ class GalleryChildEntity extends GalleryEntity {
      * @param int $parentId the id of the GalleryItem parent
      * @return GalleryStatus a status code
      */
-    function create($parentId) {
+    function create_che($parentId, $pathComponent, $isDirectory=false) {
 	global $gallery;
 
 	if (empty($parentId)) {
 	    return GalleryCoreApi::error(ERROR_BAD_PARAMETER);
 	}
 
-	$ret = parent::create();
+	$ret = parent::create_ent();
 	if ($ret) {
 	    return $ret;
 	}
